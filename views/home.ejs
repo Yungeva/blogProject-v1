@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+    <h1>Home</h1>
+    <p>
+        <%= homeContent%>
+    </p>
+
+    <%for(post in journalPosts){%>
+        <h1>
+            <%= journalPosts[post].contentTitle %>
+        </h1>
+        <p>
+            <%= journalPosts[post].contentPost.substring(0, 100) + "..."  %>
+                <a href="/post/<%=journalPosts[post].contentTitle%>">Read more</a>
+        </p>
+        <%}%>
+
+            <%- include('partials/footer'); -%>
